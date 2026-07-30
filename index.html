@@ -282,25 +282,6 @@
     }
     .prose + .prose { margin-top: 0.9rem; }
 
-    .people {
-      margin-top: 1.4rem;
-      display: grid;
-      gap: 0.65rem;
-      max-width: 42rem;
-    }
-
-    .people-row {
-      color: var(--mist);
-      font-size: 0.95rem;
-      padding-left: 0.85rem;
-      border-left: 2px solid rgba(62, 207, 176, 0.45);
-    }
-
-    .people-row span {
-      color: var(--fog);
-      font-size: 0.82rem;
-    }
-
     .interest-list {
       display: grid;
       gap: 0;
@@ -488,32 +469,30 @@
 
     <section id="about">
       <p class="section-label">About</p>
-      <h2>Building vision systems that see, decide, and scale.</h2>
+      <h2>Introduction</h2>
       <p class="prose">
-        I am a B.Eng. Computer Science student in the Honors Program at Ho Chi Minh City University of Technology (HCMUT — VNU-HCM), top 5% of the faculty (GPA 3.6/4.0).
-      </p>
-      <p class="prose">
-        As a research assistant at
+        I am a B.Eng. Computer Science student (Honors Program) at Ho Chi Minh City University of Technology (HCMUT — VNU-HCM).
+        I collaborate with
         <a href="https://arena-lab.org/" target="_blank" rel="noopener">ARENA Lab</a>
-        (Eye Code Tech — Berlin &amp; Singapore), I work on computer vision, simulation, synthetic data, and robot learning.
+        under the supervision of
+        <a href="https://linhdoan.io/" target="_blank" rel="noopener">Prof.&nbsp;Linh Kästner</a>
+        (SMU),
+        <a href="https://minhdov.github.io/" target="_blank" rel="noopener">Do Van Minh</a>
+        (SMART / M3S), and
+        <a href="https://scholar.google.com/citations?user=RBpCL4QAAAAJ&amp;hl=en" target="_blank" rel="noopener">Zhengcheng Shen</a>
+        (TU Berlin).
       </p>
-      <div class="people">
-        <p class="people-row">
-          <a href="https://linhdoan.io/" target="_blank" rel="noopener">Linh Kästner</a>
-          <span> — Assistant Professor, Singapore Management University · Director, ARENA Lab</span>
-        </p>
-        <p class="people-row">
-          <a href="https://minhdov.github.io/" target="_blank" rel="noopener">Do Van Minh</a>
-          <span> — Research Engineer, SMART / M3S (MIT in Singapore)</span>
-        </p>
-        <p class="people-row">
-          <a href="https://scholar.google.com/citations?user=RBpCL4QAAAAJ&amp;hl=en" target="_blank" rel="noopener">Zhengcheng Shen</a>
-          <span> — Berlin Institute of Technology</span>
-        </p>
+      <p class="prose">
+        My work spans computer vision, reinforcement learning, and vision–language models —
+        including referring segmentation (HORSE), synthetic data with Isaac Sim / Lab, and social navigation (BLINC) on Arena-Rosnav / ROS&nbsp;2.
+        I also build GPU-efficient inference systems at the HPCC Lab (HCMUT).
+      </p>
+      <p class="prose">
+        If you share interests in CV, RL, or multimodal perception — feel free to reach out.
+      </p>
+      <div class="cta-row" style="margin-top:1.35rem">
+        <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">View Resume</a>
       </div>
-      <p class="prose" style="margin-top:1.25rem">
-        My graduation thesis on adaptive ML inference scheduling scored <strong>9.84/10</strong> (highest in cohort), focusing on latency-aware serving of vision models on GPU.
-      </p>
     </section>
 
     <section id="interests">
@@ -598,14 +577,15 @@
       </article>
 
       <article class="work-item">
-        <p class="work-meta">ARENA Lab · Synthetic data</p>
-        <h3>SynTable reproduction</h3>
-        <p>
-          Isaac Sim / Isaac Lab pipeline for photorealistic cluttered tabletop scenes with automatic amodal masks, depth, and boxes — training perception when real labels are scarce.
+        <p class="work-meta">Collaboration · Synthetic data · Isaac Lab</p>
+        <h3>SynTable</h3>
+        <p class="authors">
+          With <a href="https://minhdov.github.io/" target="_blank" rel="noopener">Do Van Minh</a>
         </p>
-        <div class="links">
-          <a href="https://arxiv.org/abs/2307.07333" target="_blank" rel="noopener">SynTable paper →</a>
-        </div>
+        <p>
+          Synthetic data generation in <strong>NVIDIA Isaac Lab</strong> for training and evaluating segmentation models in zero-shot settings —
+          producing labeled cluttered scenes when real annotated data is limited.
+        </p>
       </article>
 
       <article class="work-item">
@@ -617,11 +597,20 @@
       </article>
 
       <article class="work-item">
-        <p class="work-meta">IEEE ACOMPA 2025 · First author</p>
-        <h3>Energy-aware VM consolidation</h3>
+        <p class="work-meta">HPCC Lab, HCMUT · IEEE ACOMPA 2025 · First author</p>
+        <h3>Energy-aware VM Consolidation</h3>
+        <p class="authors">
+          <em>Khoa Huynh Le Dang</em>,
+          Quoc Anh Tran Duong,
+          Quyet Dinh Xuan,
+          Minh Nguyen Quang,
+          Thanh Hoang Le Hai,
+          Quang Hung Nguyen,
+          Nam Thoai
+        </p>
         <p>Intelligent virtual machine consolidation for optimizing energy consumption in cloud environments.</p>
         <div class="links">
-          <a href="https://doi.org/10.1109/ACOMPA69200.2025.00021" target="_blank" rel="noopener">DOI →</a>
+          <a href="https://doi.org/10.1109/ACOMPA69200.2025.00021" target="_blank" rel="noopener">DOI: 10.1109/ACOMPA69200.2025.00021 →</a>
         </div>
       </article>
     </section>
