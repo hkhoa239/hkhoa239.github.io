@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.11.7)  30 JUL 2026 13:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.11.7)  31 JUL 2026 01:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -11,9 +11,9 @@ L3 programming layer <2025-01-18>
 e.cls
 Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
 
-(/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/tex/latex/base/size10
+(/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/tex/latex/base/size11
 .clo
-File: size10.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
+File: size11.clo 2024/06/29 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count196
 \c@section=\count197
@@ -478,6 +478,12 @@ File: microtype.cfg 2025/02/11 v3.2a microtype main configuration file (RS)
 )
 LaTeX Info: Redefining \microtypesetup on input line 3065.
 )
+
+Package microtype Warning: tracking amount list `resume.tex/25' will
+(microtype)                override list `default' for 
+(microtype)                font `T1////' on input line 25.
+
+
 (/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/tex/latex/mdframed/md
 framed.sty
 Package: mdframed 2013/07/01 1.9b: mdframed
@@ -642,32 +648,36 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layoutvoffset=\dimen176
 \Gm@dimlist=\toks28
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 11
-1.
+(/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/tex/latex/setspace/se
+tspace.sty
+Package: setspace 2022/12/04 v6.7b set line spacing
+)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 10
+9.
 
 (/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/tex/latex/lm/t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (./resume.aux)
 \openout1 = `resume.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
-LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 109.
+LaTeX Font Info:    ... okay on input line 109.
 
 (/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/tex/context/base/mkii
 /supp-pdf.mkii
@@ -684,34 +694,42 @@ LaTeX Font Info:    ... okay on input line 111.
 \makeMPintoPDFobject=\count313
 \everyMPtoPDFconversion=\toks30
 )
-Package hyperref Info: Link coloring OFF on input line 111.
+Package hyperref Info: Link coloring OFF on input line 109.
  (./resume.out) (./resume.out)
 \@outlinefile=\write3
 \openout3 = `resume.out'.
 
-LaTeX Info: Redefining \microtypecontext on input line 111.
-Package microtype Info: Applying patch `item' on input line 111.
-Package microtype Info: Applying patch `toc' on input line 111.
-Package microtype Info: Applying patch `eqnum' on input line 111.
-Package microtype Info: Applying patch `footnote' on input line 111.
-Package microtype Info: Applying patch `verbatim' on input line 111.
-LaTeX Info: Redefining \microtypesetup on input line 111.
+LaTeX Info: Redefining \microtypecontext on input line 109.
+Package microtype Info: Applying patch `item' on input line 109.
+Package microtype Info: Applying patch `toc' on input line 109.
+Package microtype Info: Applying patch `eqnum' on input line 109.
+
+
+Package microtype Warning: Unable to apply patch `footnote' on input line 109.
+
+Package microtype Info: Applying patch `verbatim' on input line 109.
+LaTeX Info: Redefining \microtypesetup on input line 109.
 Package microtype Info: Generating PDF output.
-Package microtype Info: Character protrusion enabled (level 2).
-Package microtype Info: Using default protrusion set `alltext'.
-Package microtype Info: Automatic font expansion enabled (level 2),
-(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
-Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 111.
-Package microtype Info: No adjustment of tracking.
-Package microtype Info: No adjustment of interword spacing.
-Package microtype Info: No adjustment of character kerning.
+Package microtype Info: No character protrusion.
+Package microtype Info: No font expansion.
+Package microtype Info: Tracking enabled.
+Package microtype Info: Using default tracking set `smallcaps'.
+Package microtype Info: Adjustment of interword spacing enabled.
+Package microtype Info: Using default spacing set `alltext-nott'.
+Package microtype Info: Adjustment of character kerning enabled.
+Package microtype Info: Using default kerning set `alltext'.
 
 (/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/tex/latex/microtype/m
 t-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
+
+Package microtype Warning: \nonfrenchspacing is active. Adjustment of
+(microtype)                interword spacing will disable it. You might want
+(microtype)                to add `\microtypecontext{spacing=nonfrench}'
+(microtype)                to your preamble.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -720,23 +738,23 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(36.135pt, 542.02501pt, 36.135pt)
-* v-part:(T,H,B)=(28.90755pt, 737.15489pt, 28.90755pt)
+* h-part:(L,W,R)=(39.74872pt, 534.79756pt, 39.74872pt)
+* v-part:(T,H,B)=(36.135pt, 722.7pt, 36.135pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=542.02501pt
-* \textheight=737.15489pt
-* \oddsidemargin=-36.135pt
-* \evensidemargin=-36.135pt
-* \topmargin=-43.36244pt
+* \textwidth=534.79756pt
+* \textheight=722.7pt
+* \oddsidemargin=-32.52127pt
+* \evensidemargin=-32.52127pt
+* \topmargin=-36.135pt
 * \headheight=0.0pt
 * \headsep=0.0pt
-* \topskip=10.0pt
+* \topskip=11.0pt
 * \footskip=0.0pt
-* \marginparwidth=65.0pt
-* \marginparsep=11.0pt
+* \marginparwidth=59.0pt
+* \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -761,8 +779,8 @@ LaTeX Font Info:    Trying to load font information for U+fontawesomebrands0 on
 
 (/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/tex/latex/fontawesome
 5/ufontawesomebrands0.fd)
-LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <9> not a
-vailable
+LaTeX Font Info:    Font shape `U/fontawesomebrands0/solid/n' in size <10.95> n
+ot available
 (Font)              Font shape `U/fontawesomebrands0/regular/n' tried instead o
 n input line 134.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
@@ -794,11 +812,11 @@ fd
 File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 134.
+(Font)              <10.95> on input line 134.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 134.
+(Font)              <8> on input line 134.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 134.
+(Font)              <6> on input line 134.
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 13
 4.
 
@@ -806,30 +824,25 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 13
 fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Overfull \hbox (6.0pt too wide) in paragraph at lines 114--136
+Overfull \hbox (6.0pt too wide) in paragraph at lines 112--136
 [][][][][][] 
  []
 
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/10'.
-(microtype)             Ignoring protrusion settings for this character.
 
 LaTeX Font Warning: Font shape `T1/lmr/bx/sc' undefined
 (Font)              using `T1/lmr/bx/n' instead on input line 138.
 
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 145.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 145.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/9'.
-(microtype)             Ignoring protrusion settings for this character.
+
+Overfull \hbox (15.68532pt too wide) in alignment at lines 152--152
+[] [] 
+ []
+
 
 
 
 Package fancyhdr Warning: \footskip is too small (0.0pt): 
-(fancyhdr)                Make it at least 3.60004pt, for example:
-(fancyhdr)                \setlength{\footskip}{3.60004pt}.
+(fancyhdr)                Make it at least 4.08003pt, for example:
+(fancyhdr)                \setlength{\footskip}{4.08003pt}.
 
 [1
 
@@ -840,8 +853,15 @@ nc/dvips/lm/lm-ec.enc}{/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist
 08_2/share/texmf-dist/fonts/enc/dvips/fontawesome5/fa5free2.enc}{/opt/homebrew/
 Cellar/texlive/20250308_2/share/texmf-dist/fonts/enc/dvips/fontawesome5/fa5bran
 ds0.enc}{/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/fonts/enc/dvi
-ps/lm/lm-mathsy.enc}{/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/f
-onts/enc/dvips/lm/lm-mathit.enc}] (./resume.aux)
+ps/lm/lm-mathsy.enc}]
+
+
+Package fancyhdr Warning: \footskip is too small (0.0pt): 
+(fancyhdr)                Make it at least 4.08003pt, for example:
+(fancyhdr)                \setlength{\footskip}{4.08003pt}.
+
+[2{/opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/fonts/enc/dvips/lm/
+lm-mathit.enc}] (./resume.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -854,31 +874,30 @@ Package rerunfilecheck Info: File `resume.out' has not changed.
 (rerunfilecheck)             Checksum: BE9889F2D1C5A6F3D32294D6009842BB;529.
  ) 
 Here is how much of TeX's memory you used:
- 17293 strings out of 473190
- 302745 string characters out of 5704335
- 762926 words of memory out of 5000000
- 40226 multiletter control sequences out of 15000+600000
- 621368 words of font info for 115 fonts, out of 8000000 for 9000
+ 17285 strings out of 473190
+ 304286 string characters out of 5704335
+ 747899 words of memory out of 5000000
+ 40303 multiletter control sequences out of 15000+600000
+ 612882 words of font info for 67 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,11n,79p,1003b,451s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 76i,11n,79p,1003b,656s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/fonts/type1/public/
 fontawesome5/FontAwesome5Brands-Regular.pfb></opt/homebrew/Cellar/texlive/20250
 308_2/share/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Free-Solid.p
 fb></opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/fonts/type1/public
 /lm/lmbx10.pfb></opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/fonts/
 type1/public/lm/lmbx12.pfb></opt/homebrew/Cellar/texlive/20250308_2/share/texmf
--dist/fonts/type1/public/lm/lmbx9.pfb></opt/homebrew/Cellar/texlive/20250308_2/
-share/texmf-dist/fonts/type1/public/lm/lmbxi10.pfb></opt/homebrew/Cellar/texliv
-e/20250308_2/share/texmf-dist/fonts/type1/public/lm/lmmi9.pfb></opt/homebrew/Ce
-llar/texlive/20250308_2/share/texmf-dist/fonts/type1/public/lm/lmr6.pfb></opt/h
-omebrew/Cellar/texlive/20250308_2/share/texmf-dist/fonts/type1/public/lm/lmr9.p
-fb></opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/fonts/type1/public
-/lm/lmri9.pfb></opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/fonts/t
-ype1/public/lm/lmsy9.pfb>
-Output written on resume.pdf (1 page, 241440 bytes).
+-dist/fonts/type1/public/lm/lmbxi10.pfb></opt/homebrew/Cellar/texlive/20250308_
+2/share/texmf-dist/fonts/type1/public/lm/lmmi10.pfb></opt/homebrew/Cellar/texli
+ve/20250308_2/share/texmf-dist/fonts/type1/public/lm/lmr10.pfb></opt/homebrew/C
+ellar/texlive/20250308_2/share/texmf-dist/fonts/type1/public/lm/lmr8.pfb></opt/
+homebrew/Cellar/texlive/20250308_2/share/texmf-dist/fonts/type1/public/lm/lmri1
+0.pfb></opt/homebrew/Cellar/texlive/20250308_2/share/texmf-dist/fonts/type1/pub
+lic/lm/lmsy10.pfb>
+Output written on resume.pdf (2 pages, 221406 bytes).
 PDF statistics:
- 109 PDF objects out of 1000 (max. 8388607)
- 82 compressed objects within 1 object stream
- 7 named destinations out of 1000 (max. 500000)
- 34857 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 110 PDF objects out of 1000 (max. 8388607)
+ 84 compressed objects within 1 object stream
+ 8 named destinations out of 1000 (max. 500000)
+ 12329 words of extra memory for PDF output out of 14400 (max. 10000000)
 

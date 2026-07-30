@@ -1,10 +1,10 @@
 %-------------------------
-% Modern Resume in LaTeX
+% Modern Resume in LaTeX (2-page, larger type)
 % Author: Huynh Le Dang Khoa
-% Target: Personal site / GitHub Pages
+% Target: Personal site / GitHub Pages (public, general)
 %-------------------------
 
-\documentclass[letterpaper,10pt]{article}
+\documentclass[letterpaper,11pt]{article}
 
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
@@ -20,30 +20,36 @@
 \usepackage{multicol}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-\usepackage{microtype}
+% Tracking slightly expanded; avoid aggressive micro-compression
+\usepackage[tracking=true,kerning=true,spacing=true,protrusion=false,expansion=false]{microtype}
+\SetTracking{encoding={*} }{18}
 \usepackage{mdframed}
 \usepackage{array}
 \usepackage{tabularx}
 \usepackage{geometry}
+\usepackage{setspace}
 
-%----------GEOMETRY----------
+%----------GEOMETRY (more readable margins)----------
 \geometry{
   letterpaper,
-  top=0.4in,
-  bottom=0.4in,
-  left=0.5in,
-  right=0.5in
+  top=0.5in,
+  bottom=0.5in,
+  left=0.55in,
+  right=0.55in
 }
 
+% Comfortable line spacing
+\setstretch{1.08}
+
 %----------COLOR PALETTE----------
-\definecolor{headerBg}{HTML}{1B2A5E}       % Dark navy header background
-\definecolor{accent}{HTML}{1B2A5E}         % Section title / bold text
-\definecolor{accentlight}{HTML}{3A5DA0}    % Sub-labels, links
-\definecolor{accentmid}{HTML}{2D4A8A}      % Mid tone
-\definecolor{rulecol}{HTML}{3A5DA0}        % Rule under sections
-\definecolor{textgray}{HTML}{2E2E2E}       % Body text
-\definecolor{lightgray}{HTML}{F4F6FA}      % Tag/pill backgrounds
-\definecolor{tagtextcol}{HTML}{1B2A5E}     % Tag text color
+\definecolor{headerBg}{HTML}{1B2A5E}
+\definecolor{accent}{HTML}{1B2A5E}
+\definecolor{accentlight}{HTML}{3A5DA0}
+\definecolor{accentmid}{HTML}{2D4A8A}
+\definecolor{rulecol}{HTML}{3A5DA0}
+\definecolor{textgray}{HTML}{2E2E2E}
+\definecolor{lightgray}{HTML}{F4F6FA}
+\definecolor{tagtextcol}{HTML}{1B2A5E}
 
 %----------PAGE SETUP----------
 \pagestyle{fancy}
@@ -60,93 +66,83 @@
 
 %----------SECTION FORMATTING----------
 \titleformat{\section}{
-  \vspace{-5pt}\color{accent}\scshape\raggedright\normalsize\bfseries
+  \vspace{2pt}\color{accent}\scshape\raggedright\large\bfseries
 }{}{0em}{}[
-  {\color{rulecol}\titlerule[1.0pt]}
-  \vspace{-4pt}
+  {\color{rulecol}\titlerule[1.2pt]}
+  \vspace{2pt}
 ]
 
 %----------CUSTOM COMMANDS----------
 
-% Subheading: Company/School | Right | Role | Date
 \newcommand{\resumeSubheading}[4]{
-  \vspace{0pt}\item
+  \vspace{4pt}\item
     \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
-      \textbf{\color{accent}#1} & \small\color{accentlight}\textbf{#2} \\[-2pt]
-      \textit{\small\color{accentmid}#3} & \textit{\small\color{textgray} #4} \\
-    \end{tabular*}\vspace{-6pt}
+      \textbf{\color{accent}#1} & \normalsize\color{accentlight}\textbf{#2} \\[1pt]
+      \textit{\normalsize\color{accentmid}#3} & \textit{\normalsize\color{textgray} #4} \\
+    \end{tabular*}\vspace{2pt}
 }
 
-% Bullet item with bold label
 \newcommand{\resumeItem}[2]{
-  \item\small{
+  \item\normalsize{
     \textbf{\color{accentmid}#1:} #2
-  }\vspace{-2pt}
+  }\vspace{2pt}
 }
 
-% Project item
 \newcommand{\resumeSubItem}[2]{
-  \vspace{-1pt}\item
-  \small{\textbf{\color{accent}#1} \textcolor{rulecol}{$\cdot$} #2}\vspace{-3pt}
+  \vspace{4pt}\item
+  \normalsize{\textbf{\color{accent}#1} \textcolor{rulecol}{$\cdot$} #2}\vspace{2pt}
 }
 
-\renewcommand{\labelitemii}{{\color{accentlight}\small$\circ$}}
+\renewcommand{\labelitemii}{{\color{accentlight}$\circ$}}
 \renewcommand{\labelitemi}{{\color{accentlight}$\bullet$}}
 
 \newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0in, label={}]
+  \begin{itemize}[leftmargin=0in, label={}, itemsep=2pt, topsep=2pt]
 }
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-6pt}}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{1pt}}
 \newcommand{\resumeItemListStart}{
-  \begin{itemize}[leftmargin=0.18in, itemsep=-1pt, topsep=1pt]
+  \begin{itemize}[leftmargin=0.22in, itemsep=2pt, topsep=2pt, parsep=1pt]
 }
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
-
-% Skill tag pill
-\newcommand{\skilltag}[1]{%
-  \colorbox{lightgray}{\small\color{tagtextcol}\textbf{#1}}%
-}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{2pt}}
 
 %==========================================
 \begin{document}
 
-%----------HEADER (full-width colored bar)----------
+%----------HEADER----------
 \noindent
 \colorbox{headerBg}{%
   \begin{minipage}{\linewidth}
-    \vspace{6pt}
+    \vspace{10pt}
     \begin{center}
-      {\huge\bfseries\color{white} Huynh Le Dang Khoa}\\[3pt]
-      {\small\color{white!80!headerBg}
-        \faEnvelope\ \href{mailto:khuynhledang@gmail.com}{khuynhledang@gmail.com}
+      {\LARGE\bfseries\color{white} Huynh Le Dang Khoa}\\[6pt]
+      {\normalsize\color{white!80!headerBg}
+        \faEnvelope\ \href{mailto:khoa.huynhspbk22@hcmut.edu.vn}{khoa.huynhspbk22@hcmut.edu.vn}
         \quad\textcolor{white!50!headerBg}{|}\quad
         \faPhone\ 0986 107 317
         \quad\textcolor{white!50!headerBg}{|}\quad
         \faLinkedin\ \href{https://www.linkedin.com/in/hldk2392004}{linkedin.com/in/hldk2392004}
-        \quad\textcolor{white!50!headerBg}{|}\quad
+        \\[4pt]
         \faGithub\ \href{https://github.com/hkhoa239}{github.com/hkhoa239}
+        \quad\textcolor{white!50!headerBg}{|}\quad
+        \href{https://hkhoa239.github.io/}{hkhoa239.github.io}
         \quad\textcolor{white!50!headerBg}{|}\quad
         \faMapMarker*\ Ho Chi Minh City
       }
     \end{center}
-    \vspace{6pt}
+    \vspace{10pt}
   \end{minipage}%
 }
-\vspace{1pt}
+\vspace{6pt}
 
 %----------SUMMARY----------
 \section{Summary}
 \vspace{2pt}
-\small{
-As an Honors B.Eng.\ CS student at HCMUT, I contribute to collaborative research at \textbf{ARENA Lab} and \textbf{SMART} (Singapore-MIT Alliance for Research and Technology) on computer vision, reinforcement learning, and vision--language models for perception and robot learning.
-}
-\begin{itemize}[leftmargin=0.18in, itemsep=-1pt, topsep=2pt]
-  \small{
-    \item Contribute to collaborative projects spanning referring segmentation (\textbf{HORSE}), Isaac Lab synthetic data (\textbf{SynTable}), and behavior-aware social navigation (\textbf{BLINC} on Arena-Rosnav / ROS~2).
-    \item Specialize in geometry-grounded vision--language grounding, zero-shot / synthetic-data segmentation, multi-modal perception (detection, pose, depth), and GPU-efficient inference profiling.
-  }
+\noindent
+Honors B.Eng.\ Computer Science (HCMUT, GPA 3.6/4.0; completed, diploma pending). Research interests in \textbf{computer vision}, \textbf{reinforcement learning}, and \textbf{vision--language models}, with applications to perception, robot learning, and embodied agents. Contribute to collaborative research at \textbf{ARENA Lab} (SMU) and \textbf{SMART} on segmentation, simulation, and world models.
+\begin{itemize}[leftmargin=0.22in, itemsep=2pt, topsep=4pt, parsep=1pt]
+  \item Co-authored \textbf{HORSE} (AAAI'27 under review): geometry-grounded relational reranking for referring segmentation on frozen \textbf{SAM3} with CLIP text.
+  \item Experience with \textbf{PyTorch}, 2D/3D multimodal perception, Isaac Lab / ROS~2, video / latent \textbf{world models}, and GPU-efficient inference systems.
 \end{itemize}
-\vspace{-6pt}
 
 %----------EDUCATION----------
 \section{Education}
@@ -156,6 +152,7 @@ As an Honors B.Eng.\ CS student at HCMUT, I contribute to collaborative research
     {B.Eng. Computer Science \& Engineering --- Honors Program (Top 5\% of Faculty)}{2022 -- 2026}
     \resumeItemListStart
       \resumeItem{GPA}{3.6 / 4.0 \; \textcolor{rulecol}{$\cdot$} \; \href{https://drive.google.com/file/d/1aZO6tOhZFb4QfVF3R1fiCSrE26g48AsZ/view?usp=sharing}{\color{accentlight}\underline{Academic Transcript}}}
+      \resumeItem{Focus}{Machine learning, computer vision, deep learning, and systems for ML inference.}
     \resumeItemListEnd
 \resumeSubHeadingListEnd
 
@@ -164,29 +161,27 @@ As an Honors B.Eng.\ CS student at HCMUT, I contribute to collaborative research
 \resumeSubHeadingListStart
 
   \resumeSubheading
-    {Eye Code Tech --- Arena Lab (Berlin \& Singapore)}{Singapore (Remote)}
+    {Eye Code Tech --- ARENA Lab @ Singapore Management University}{Singapore (Remote)}
     {Research Collaborator --- Vision AI, Simulation \& Robot Learning}{Feb 2026 -- Present}
     \resumeItemListStart
       \resumeItem{Collaborative Research}
-        {Contribute to joint projects at \textbf{ARENA Lab} and \textbf{SMART} (Singapore-MIT Alliance for Research and Technology) on vision, simulation, and robot learning.}
-      \resumeItem{Synthetic Data (Isaac Lab)}
-        {Built automated \textbf{synthetic data} pipelines in \textbf{Isaac Lab} for \textbf{zero-shot} segmentation when real labels are scarce (\textbf{SynTable}).}
+        {Contribute to joint projects at \textbf{ARENA Lab} (Singapore Management University; Berlin \& Singapore) and \textbf{SMART} (Singapore-MIT Alliance for Research and Technology) on vision, simulation, and robot learning.}
+      \resumeItem{HORSE (VLM-grounded Segmentation)}
+        {Co-authored \textbf{HORSE}: geometry-grounded relational reranking for \textbf{SAM3} referring segmentation with CLIP text (AAAI'27 under review). Train and ablate at scale on \textbf{8$\times$ NVIDIA H100}; [\href{https://openreview.net/forum?id=8gWcPxq4t6}{OpenReview}].}
       \resumeItem{Multi-Modal Perception}
-        {Train/evaluate \textbf{object detection}, 6-DoF pose, depth, and segmentation models in \textbf{PyTorch}; ID/OOD and sim-to-real benchmarks combining \textbf{2D}, \textbf{3D}, and scene context.}
-      \resumeItem{World Models \& ROS}
-        {Experiment with latent \textbf{world models} (e.g., \textbf{LE-WM}-style) for predictive scene understanding; contribute to \textbf{Arena-RosNav} --- mobile navigation in Gazebo/\textbf{Isaac Lab} with pedestrian agents and \textbf{ROS~2 (Jazzy)} policies; [\href{https://github.com/arena-rosnav/arena-rosnav/tree/humble}{GitHub}].}
-      \resumeItem{HORSE \& Scale}
-        {Co-authored \textbf{HORSE}, a lightweight geometry-grounded relational reranking adapter for frozen \textbf{SAM3} referring segmentation (AAAI'27 under review); train and ablate at scale on \textbf{8$\times$ NVIDIA H100}; [\href{https://openreview.net/forum?id=8gWcPxq4t6}{OpenReview}].}
+        {Train and evaluate \textbf{object detection}, 6-DoF pose, depth, and segmentation models in \textbf{PyTorch}; design ID/OOD and sim-to-real benchmarks combining \textbf{2D}, \textbf{3D}, and scene context.}
+      \resumeItem{World Models \& Robot Learning}
+        {Experiment with latent / video-style \textbf{world models} for predictive scene understanding and synthetic trajectories; contribute to \textbf{Arena-RosNav} navigation in Gazebo/\textbf{Isaac Lab} with \textbf{ROS~2}; [\href{https://github.com/arena-rosnav/arena-rosnav/tree/humble}{GitHub}].}
     \resumeItemListEnd
 
   \resumeSubheading
-    {HPC Lab (Research Group), HCMUT}{Ho Chi Minh City, Vietnam}
+    {HPCC Lab (Research Group), HCMUT}{Ho Chi Minh City, Vietnam}
     {Research Assistant --- GPU Inference, Scheduling \& Profiling}{Jan 2025 -- May 2026}
     \resumeItemListStart
       \resumeItem{High-Performance Inference (Thesis)}
         {Led adaptive scheduling for mixed ML workloads: packaged \textbf{YOLO}/\textbf{ResNet}, profiled \textbf{latency}/throughput/memory on \textbf{NVIDIA RTX 5090}, and tuned batching under SLA targets for real-time serving.}
       \resumeItem{Systems \& Evaluation}
-        {Designed reproducible benchmarks vs.\ strong baselines; analyzed accuracy--latency trade-offs for GPU-accelerated inference pipelines.}
+        {Designed reproducible benchmarks vs.\ strong baselines; analyzed accuracy--latency trade-offs for GPU-accelerated inference pipelines and documented results for peer review.}
     \resumeItemListEnd
 
 \resumeSubHeadingListEnd
@@ -195,57 +190,54 @@ As an Honors B.Eng.\ CS student at HCMUT, I contribute to collaborative research
 \section{Projects}
 \resumeSubHeadingListStart
 
-  \resumeSubItem{SynTable \textnormal{---} \textit{Isaac Lab Synthetic Data (with Do Van Minh)}}
-    {Synthetic data generation in \textbf{NVIDIA Isaac Lab} for training and evaluating \textbf{segmentation} models in \textbf{zero-shot} settings --- producing labeled cluttered scenes when real annotated data is limited.}
-  \begin{itemize}[leftmargin=0.18in, itemsep=-1pt, topsep=1pt, label={\color{accentlight}$\triangleright$}]
-    \small{
-      \item \textit{Contribution:} Automated scene generation and labeling pipelines to support robust segmentation without heavy reliance on real-world annotations.
-      \item \textit{Stack:} \textbf{Isaac Lab}, Python, \textbf{PyTorch}, synthetic-to-real evaluation.
-    }
-  \end{itemize}\vspace{0pt}
-
   \resumeSubItem{HORSE \textnormal{---} \textit{AAAI 2027 Submission (Co-Author)}}
-    {Lightweight \textbf{geometry-grounded relational reranking} adapter for referring segmentation: reranks confidence-filtered \textbf{SAM3} candidates via box geometry, self-attention, and frozen CLIP text --- no mask-generator retraining; [\href{https://openreview.net/forum?id=8gWcPxq4t6}{OpenReview}].}
-  \begin{itemize}[leftmargin=0.18in, itemsep=-1pt, topsep=1pt, label={\color{accentlight}$\triangleright$}]
-    \small{
-      \item \textit{Results:} Improves SAM3 on all nine splits --- RefCOCO+ TestB \textbf{43.68$\rightarrow$54.64} (+10.96), RefCOCO+ Val \textbf{+9.10}, RefCOCO TestB \textbf{+8.68}; largest gains on relation-intensive / same-category expressions. Stack: Python, \textbf{PyTorch}, SAM3, CLIP.
-    }
-  \end{itemize}\vspace{0pt}
+    {Lightweight \textbf{geometry-grounded relational reranking} for referring expression segmentation on frozen \textbf{SAM3} with CLIP --- language-conditioned candidate selection without mask-generator retraining; [\href{https://openreview.net/forum?id=8gWcPxq4t6}{OpenReview}].}
+  \begin{itemize}[leftmargin=0.22in, itemsep=2pt, topsep=2pt, parsep=1pt, label={\color{accentlight}$\triangleright$}]
+      \item \textit{Method:} Box geometry + self-attention + frozen CLIP text; fuse with backbone confidence --- no mask-generator retraining.
+      \item \textit{Results:} Improves SAM3 on all nine RefCOCO-family splits (e.g.\ RefCOCO+ TestB \textbf{+10.96}); strong on relation-intensive queries.
+      \item \textit{Stack:} Python, \textbf{PyTorch}, SAM3, CLIP.
+  \end{itemize}
+
+  \resumeSubItem{Video World Models for Robot Generalization \textnormal{---} \textit{with Do Van Minh; Inspired by DreamGen}}
+    {Exploring \textbf{DreamGen}-style pipelines that use video world models to synthesize neural trajectories for robot policy learning --- generating diverse behaviors/environments from limited teleoperation data, then recovering pseudo-actions for training; [\href{https://arxiv.org/abs/2505.12705}{arXiv:2505.12705}].}
+  \begin{itemize}[leftmargin=0.22in, itemsep=2pt, topsep=2pt, parsep=1pt, label={\color{accentlight}$\triangleright$}]
+      \item \textit{Focus:} Image-to-video world models adapted to robot embodiments; latent-action / inverse-dynamics recovery; scaling beyond manual data collection for behavior and environment generalization.
+      \item \textit{Stack:} Python, \textbf{PyTorch}, video generative models, Isaac Lab / robot simulation, policy learning evaluation.
+  \end{itemize}
 
   \resumeSubItem{Adaptive ML Inference Server \textnormal{---} \textit{Graduation Thesis, Score \textbf{9.84/10} (Highest in Cohort)}}
     {Adaptive scheduling for concurrent inference under bursty traffic; packaged \textbf{YOLO}/\textbf{ResNet}, profiled on \textbf{RTX 5090}; \textbf{$\sim$20\%} higher throughput and \textbf{$\sim$80\%} fewer SLA violations vs.\ A* baselines.}
-  \begin{itemize}[leftmargin=0.18in, itemsep=-1pt, topsep=1pt, label={\color{accentlight}$\triangleright$}]
-    \small{
-      \item \textit{Stack:} Python, \textbf{ONNX Runtime}, GPU latency profiling, Linux.
-    }
-  \end{itemize}\vspace{0pt}
+  \begin{itemize}[leftmargin=0.22in, itemsep=2pt, topsep=2pt, parsep=1pt, label={\color{accentlight}$\triangleright$}]
+      \item \textit{Stack:} Python, \textbf{ONNX Runtime}, GPU latency \& memory profiling, Linux.
+  \end{itemize}
 
 \resumeSubHeadingListEnd
 
 %----------PUBLICATIONS \& ACHIEVEMENTS----------
 \section{Publications \& Achievements}
 \resumeSubHeadingListStart
-  \item\small{
+  \item\normalsize{
     \color{accentmid}\textbf{Publications:}\color{textgray}\;
     \textit{HORSE: Geometry-Grounded Relational Reranking for Referring Expression Segmentation.}
     Co-Author, AAAI 2027 (under review). \href{https://openreview.net/forum?id=8gWcPxq4t6}{\color{accentlight}OpenReview}\;
     \textcolor{rulecol}{$\cdot$}\;
     \textit{An Intelligent Virtual Machine Consolidation Approach\ldots}
     First Author, 19th ACOMPA (2025). \href{https://doi.org/10.1109/ACOMPA69200.2025.00021}{\color{accentlight}DOI}
-  }\vspace{-2pt}
-  \item\small{
+  }\vspace{3pt}
+  \item\normalsize{
     \color{accentmid}\textbf{Skills:}\color{textgray}\;
-    \textbf{Python}, \textbf{C++}; Linux; \textbf{PyTorch}, OpenCV, CUDA; \textbf{Isaac Sim}/\textbf{Isaac Lab}, ROS~2; YOLO, ResNet, SAM3; ONNX / TensorRT-ready packaging; GPU profiling (latency, memory); concurrency \& systems fundamentals; Git.
-  }\vspace{-2pt}
-  \item\small{
+    \textbf{Python}, \textbf{C++}; Linux; \textbf{PyTorch}, OpenCV, CUDA; CLIP / VLM-style text--vision fusion; SAM3, YOLO, ResNet; \textbf{Isaac Lab}; ROS~2; ONNX packaging; Git.
+  }\vspace{4pt}
+  \item\normalsize{
     \color{accentmid}\textbf{Awards:}\color{textgray}\;
-    Most Outstanding Intern --- RAG AI Agent (Dien Toan Group);\;
-    2\textsuperscript{nd} Place, Innostart Entrepreneurship Competition.
-  }\vspace{-2pt}
-  \item\small{
+    Most Outstanding Intern --- AI Engineer, Dien Toan Group;\;
+    2\textsuperscript{nd} Place, Innostart Entrepreneurship Competition (AI image-generative model startup);\;
+    4\textsuperscript{th} Place, UTE Junior Startup.
+  }\vspace{4pt}
+  \item\normalsize{
     \color{accentmid}\textbf{Languages:}\color{textgray}\;
     English (Professional Working Proficiency);\;
     Vietnamese (Native).
-  }\vspace{-2pt}
+  }\vspace{2pt}
 \resumeSubHeadingListEnd
 \end{document}
