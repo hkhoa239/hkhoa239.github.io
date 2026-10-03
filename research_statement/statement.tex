@@ -1,0 +1,87 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=0.82in]{geometry}
+\usepackage{setspace}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{lmodern}
+\usepackage[T1]{fontenc}
+\usepackage{microtype}
+
+\setstretch{1.01}
+\setlength{\parskip}{0.28em}
+\setlength{\parindent}{0pt}
+\titlespacing*{\section}{0pt}{0.7em}{0.22em}
+\titlespacing*{\subsection}{0pt}{0.5em}{0.12em}
+\setlist[itemize]{leftmargin=1.2em, itemsep=0.15em, topsep=0.2em}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Research Statement}}\\[0.45em]
+    {\large Huynh Le Dang Khoa}\\[0.2em]
+    Ho Chi Minh City University of Technology (HCMUT -- VNU-HCM)\\
+    \href{mailto:khoa.huynhspbk22@hcmut.edu.vn}{khoa.huynhspbk22@hcmut.edu.vn}
+    \quad$\cdot$\quad
+    \href{https://hkhoa239.github.io/}{hkhoa239.github.io}\\[0.25em]
+    {\small September 2026}
+\end{center}
+
+\vspace{0.1em}
+
+\section*{Research Vision}
+
+I completed the Honors Bachelor's program in Computer Science at Ho Chi Minh City University of Technology (HCMUT), with the official diploma expected in November 2026. I am seeking PhD training for Spring or Fall 2027 in \textbf{vision--language--action (VLA) models, robotic learning, and embodied perception}.
+
+My long-term research question is: \textit{how can a robot perceive, remember, and act reliably when the environment is only partially observed, changes over time, and differs from the data on which its models were trained?} My recent work approaches this question from the perception side, studying how foundation models can remain reliable under sparse, corrupted, or shifted visual evidence. In parallel, through research activities with Do Van Minh's group at SMART (Singapore--MIT Alliance for Research and Technology) and ARENA Lab at Singapore Management University, I have begun moving toward robot learning, particularly long-horizon VLA models and scalable evaluation.
+
+\section*{Reliable Perception for Embodied Systems}
+
+A recurring theme in my current research is that strong foundation models are useful only when we understand \textit{which evidence they should trust}.
+
+In \textbf{Reliable Few-Point Metric Grounding}, currently under review, I study whether monocular depth foundation models can be grounded using only a handful of external metric measurements. On NYUv2 with UniDepthV2, eight observations reduce AbsRel from 0.0766 to 0.0540, a \textbf{29.5\% relative improvement}. More importantly, when \textbf{80\% of the sparse measurements are corrupted}, the proposed reliability-aware grounding mechanism still achieves an AbsRel of 0.0608. This project shaped my interest in systems that reason not only from available evidence, but also about its reliability.
+
+In a second project on \textbf{acquisition-aware anomaly detection}, I study a related problem: an observation may change even when the physical state of the scene does not. Blur, motion, illumination, and sensor noise can therefore become false anomaly evidence. We introduce \textbf{ARAD}, a benchmark for acquisition robustness, together with a training-free framework that suppresses acquisition-induced variation while preserving defect evidence. The broader principle is directly relevant to robotics: perception should distinguish changes in \textit{how a scene is observed} from changes in \textit{what is actually present}.
+
+My work on \textbf{Mutual Hand--Object Reasoning for Egocentric Manipulation Perception}, under review at ICRA 2027, moves closer to manipulation. Instead of reasoning only from hands to manipulated objects, the model lets hand and object evidence refine one another. It improves over CaRe-Ego by \textbf{6.93 mIoU points} on the EgoHOS out-of-distribution split and by \textbf{3.82 mIoU points} on mini-HOI4D without fine-tuning. These results motivate my transition from robust perception toward policies that must use such perception over extended interactions.
+
+\section*{Toward Robot Learning}
+
+I am currently exploring two projects that bridge perception and control.
+
+\textbf{Video-to-simulation} investigates how computer-vision models can reconstruct environments and demonstrations from monocular videos, so that robot learning can begin from naturally collected human demonstrations rather than manually constructed simulator scenes.
+
+\textbf{MemoryPi} is an initial exploration of memory-augmented VLA models, motivated by failure modes I observed while working with RoboMME-style tasks. Current VLAs can perform well when the information required for an action remains visible, but long-horizon tasks often require remembering observations, decisions, or subtask outcomes that are no longer present in the current frame. This limitation is the main direction I want to pursue during my PhD.
+
+\section*{Research Agenda}
+
+\subsection*{1. Long-Horizon, Memory-Augmented VLA}
+
+I want to develop VLA models that maintain useful state across long interactions rather than repeatedly solving each step from a short context window. The central questions are:
+
+\begin{itemize}
+    \item \textbf{What should a robot remember?} Raw visual tokens may be inefficient; object states, spatial relations, completed subgoals, failures, and action outcomes may provide more useful long-term structure.
+    \item \textbf{When should memory be written and retrieved?} An effective memory system should identify events that matter for future decisions instead of storing the entire observation stream.
+    \item \textbf{How should memory interact with action generation?} Memory should improve long-horizon reasoning without making VLA inference prohibitively expensive.
+\end{itemize}
+
+A useful system should demonstrate gains specifically on tasks where relevant evidence has disappeared from view, and should reveal \textit{what kind of memory} is necessary rather than simply showing that a longer context window helps.
+
+\subsection*{2. Scalable Evaluation Beyond Conventional Simulation}
+
+Physics simulators such as RoboCasa365 provide strong controlled evaluation, but their coverage is ultimately bounded by available environments, assets, and embodiments. I am interested in a complementary evaluation paradigm based on \textbf{action-conditioned robot video generation and learned world models}.
+
+The idea is not to replace simulation. Visual plausibility alone does not guarantee physical correctness. Instead, I want to study whether generative world models can serve as calibrated evaluators in scenes where a full simulator does not exist. A policy action would condition a predicted future observation, allowing us to ask whether the resulting interaction is visually and semantically consistent with the intended task.
+
+The key research questions are therefore not only how to generate future robot observations, but \textbf{when such predictions are reliable enough to evaluate a policy}, how their judgments correlate with ground-truth simulation or real execution, and how evaluation fails under new cameras, embodiments, objects, or environments. Recent robot video generation models suggest that this direction is becoming technically feasible, while my own early experiments indicate that generalization remains a substantial open problem.
+
+\section*{PhD Direction}
+
+I ultimately want my PhD to connect these themes into a coherent embodied-learning agenda: \textbf{reliable perception, persistent memory, and scalable evaluation for long-horizon robotic manipulation}. I am especially interested in unstructured real-world settings, including construction and industrial environments, where visual conditions vary, task histories matter, and it is difficult to pre-build every evaluation environment in simulation.
+
+I currently have access to NVIDIA H100 and RTX A5000 GPUs, allowing me to independently prototype and evaluate large vision and VLA models. My undergraduate thesis, graded 9.84/10, studied scheduling for concurrent vision inference; it also taught me to treat evaluation methodology and systems constraints as part of the research problem rather than as an afterthought.
+
+My goal for doctoral study is therefore not only to build a stronger VLA architecture, but to understand \textit{what information an embodied agent should trust, what it should remember, and how we can reliably determine whether it is learning the right behavior}.
+
+\end{document}
