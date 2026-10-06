@@ -1,401 +1,198 @@
 \documentclass[letterpaper,11pt]{article}
 
-\usepackage{latexsym}
-\usepackage[empty]{fullpage}
+\usepackage[T1]{fontenc}
+\usepackage{tgpagella}
+\usepackage[margin=0.55in]{geometry}
 \usepackage{titlesec}
-\usepackage{marvosym}
-\usepackage[usenames,dvipsnames]{color}
 \usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage{fancyhdr}
-\usepackage{fontawesome5}
 \usepackage{xcolor}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
-\usepackage[tracking=true,kerning=true,spacing=true,protrusion=false,expansion=false]{microtype}
-\usepackage{geometry}
+\usepackage{microtype}
 \usepackage{setspace}
+\usepackage{needspace}
 
-% ---------- Geometry ----------
-\geometry{
-  letterpaper,
-  top=0.50in,
-  bottom=0.50in,
-  left=0.55in,
-  right=0.55in
-}
+\definecolor{ink}{HTML}{1C1916}
+\definecolor{muted}{HTML}{5C564E}
+\definecolor{rule}{HTML}{1C1916}
 
-\setstretch{1.05}
-\SetTracking{encoding={*}}{14}
-
-% ---------- Colors ----------
-\definecolor{headerBg}{HTML}{1B2A5E}
-\definecolor{accent}{HTML}{1B2A5E}
-\definecolor{accentlight}{HTML}{3A5DA0}
-\definecolor{accentmid}{HTML}{2D4A8A}
-\definecolor{rulecol}{HTML}{3A5DA0}
-\definecolor{textgray}{HTML}{2E2E2E}
-
-% ---------- Page setup ----------
-\pagestyle{fancy}
-\fancyhf{}
-\fancyfoot{}
-\renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setstretch{1.02}
+\color{ink}
 \urlstyle{same}
-\raggedbottom
 \raggedright
-\setlength{\tabcolsep}{0in}
-\color{textgray}
 
-% ---------- Section formatting ----------
 \titleformat{\section}{
-  \vspace{2pt}\color{accent}\scshape\raggedright\large\bfseries
+  \vspace{7pt}
+  \large\scshape\color{ink}
 }{}{0em}{}[
-  {\color{rulecol}\titlerule[1.15pt]}
-  \vspace{2pt}
+  \vspace{1pt}
+  {\color{rule}\titlerule[0.5pt]}
+  \vspace{3pt}
 ]
 
-% ---------- Custom commands ----------
-\newcommand{\resumeSubheading}[4]{
-  \vspace{3pt}\item
+\setlist[itemize]{leftmargin=1.05em, itemsep=1.5pt, topsep=2pt, parsep=0pt}
+\renewcommand{\labelitemi}{\textcolor{muted}{\small\textbullet}}
+
+\newcommand{\contactsep}{\hspace{0.55em}{\color{muted}$\cdot$}\hspace{0.55em}}
+
+\newcommand{\role}[4]{%
+  \Needspace{4\baselineskip}
+  \vspace{4pt}
   \begin{tabular*}{\linewidth}{@{}l@{\extracolsep{\fill}}r@{}}
-    \textbf{\color{accent}#1} &
-    \normalsize\color{accentlight}\textbf{#2} \\[1pt]
-    \textit{\normalsize\color{accentmid}#3} &
-    \textit{\normalsize\color{textgray}#4} \\
-  \end{tabular*}\vspace{1pt}
+    \textbf{#1} & \textcolor{muted}{#2} \\[1pt]
+    \textit{#3} & \textcolor{muted}{\textit{#4}} \\
+  \end{tabular*}\\[1pt]
 }
 
-\newcommand{\resumeItem}[2]{
-  \item\normalsize{
-    \textbf{\color{accentmid}#1:} #2
-  }\vspace{1pt}
+\newcommand{\advisors}[1]{%
+  {\small\textcolor{muted}{Advisors:}\ #1}\par\vspace{1pt}
 }
 
-\newcommand{\resumeSubItem}[2]{
-  \vspace{2pt}\item
-  \normalsize{
-    \textbf{\color{accent}#1}
-    \textcolor{rulecol}{$\cdot$}
-    #2
-  }\vspace{1pt}
+\newcommand{\paper}[2]{%
+  \item \textit{#1}\ #2 \vspace{2pt}
 }
 
-\renewcommand{\labelitemii}{{\color{accentlight}$\circ$}}
-\renewcommand{\labelitemi}{{\color{accentlight}$\bullet$}}
-
-\newcommand{\resumeSubHeadingListStart}{
-  \begin{itemize}[leftmargin=0in, label={}, itemsep=1pt, topsep=1pt]
-}
-
-\newcommand{\resumeSubHeadingListEnd}{
-  \end{itemize}\vspace{1pt}
-}
-
-\newcommand{\resumeItemListStart}{
-  \begin{itemize}[leftmargin=0.22in, itemsep=1.5pt, topsep=2pt, parsep=0.5pt]
-}
-
-\newcommand{\resumeItemListEnd}{
-  \end{itemize}\vspace{1pt}
-}
-
-% ==========================================
 \begin{document}
 
-% ---------- Header ----------
-\noindent
-\colorbox{headerBg}{%
-  \begin{minipage}{\linewidth}
-    \vspace{9pt}
-    \begin{center}
-      {\LARGE\bfseries\color{white} Huynh Le Dang Khoa}\\[5pt]
+\begin{center}
+  {\LARGE\bfseries Huynh Le Dang Khoa}\\[5pt]
+  {\small
+    \href{mailto:khoa.huynhspbk22@hcmut.edu.vn}{khoa.huynhspbk22@hcmut.edu.vn}
+    \contactsep
+    \href{https://hkhoa239.github.io/}{hkhoa239.github.io}
+    \contactsep
+    \href{https://github.com/hkhoa239}{github.com/hkhoa239}
+    \contactsep
+    \href{https://www.linkedin.com/in/hldk2392004}{linkedin.com/in/hldk2392004}
+    \\[2pt]
+    Ho Chi Minh City, Vietnam
+    \contactsep
+    0986 107 317
+  }
+\end{center}
 
-      {\normalsize\color{white!85!headerBg}
-        \faEnvelope\
-        \href{mailto:khoa.huynhspbk22@hcmut.edu.vn}
-        {khoa.huynhspbk22@hcmut.edu.vn}
-        \quad\textcolor{white!50!headerBg}{|}\quad
-        \faPhone\ 0986 107 317
-        \quad\textcolor{white!50!headerBg}{|}\quad
-        \faLinkedin\
-        \href{https://www.linkedin.com/in/hldk2392004}
-        {linkedin.com/in/hldk2392004}
-        \\[3pt]
-        \faGithub\
-        \href{https://github.com/hkhoa239}
-        {github.com/hkhoa239}
-        \quad\textcolor{white!50!headerBg}{|}\quad
-        \href{https://hkhoa239.github.io/}
-        {hkhoa239.github.io}
-        \quad\textcolor{white!50!headerBg}{|}\quad
-        \faMapMarker*\ Ho Chi Minh City, Vietnam
-      }
-    \end{center}
-    \vspace{9pt}
-  \end{minipage}%
-}
+\section*{Research Profile}
 
-\vspace{5pt}
+Honors computer science graduate of Ho Chi Minh City University of Technology,
+Vietnam National University. My research direction is \textbf{computer vision and
+vision--language models}, and how that perception supports vision--language--action
+models for robot learning.
 
-% ---------- Research Profile ----------
-\section{Research Profile}
+Recent experiments are in computer vision and robot simulation: reliable visual
+perception with foundation models, vision--language models, and early
+vision--language--action work, including learning from human video and evaluating
+robot behavior in simulation.
 
-Honors Computer Science graduate from Ho Chi Minh City University of Technology
-(HCMUT -- VNU-HCM), with research experience spanning
-\textbf{computer vision, foundation models, and embodied AI}.
-My current research direction is centered on
-\textbf{vision--language--action (VLA) models and robotic learning},
-particularly long-horizon manipulation, memory-augmented policies,
-learning from human video, and scalable evaluation of embodied agents.
+\section*{Education}
 
-My previous work studies reliable visual reasoning under sparse,
-corrupted, and distribution-shifted observations, including
-monocular metric depth, anomaly detection,
-and egocentric hand--object perception.
-I am interested in connecting these perceptual capabilities with
-robot policies that must \textbf{perceive reliably, retain information over time,
-and act under changing real-world conditions}.
-
-% ---------- Education ----------
-\section{Education}
-
-\resumeSubHeadingListStart
-
-\resumeSubheading
-  {Ho Chi Minh City University of Technology (HCMUT -- VNU-HCM)}
-  {Ho Chi Minh City, Vietnam}
-  {B.Eng. Computer Science \& Engineering --- Honors Program}
+\role
+  {Ho Chi Minh City University of Technology, Vietnam National University}
+  {Ho Chi Minh City}
+  {B.Eng.\ Computer Science \& Engineering, Honors Program}
   {2022 -- 2026}
 
-\resumeItemListStart
+\begin{itemize}
+  \item Excellent standing. Top 1\% of the faculty. Official diploma expected November 2026.
+  \item Undergraduate thesis on accuracy-aware scheduling for concurrent vision inference. Grade: \textbf{9.84/10}.
+  \item Interests: computer vision; vision--language models; vision--language--action models; long-horizon robot learning; learning from human video.
+\end{itemize}
 
-\resumeItem{Academic Standing}
-  {GPA: Excellent; Top \textbf{1\%} of Faculty.
-  Program completed; official diploma expected November 2026.}
+\section*{Publications and Manuscripts}
 
-\resumeItem{Undergraduate Thesis}
-  {Accuracy-aware and failure-resilient scheduling for concurrent
-  vision inference; grade: \textbf{9.84/10}.}
+\begin{itemize}
+  \paper
+    {Reliable Few-Point Metric Grounding for Monocular Depth Foundation Models.}
+    {\textbf{ICLR 2027, under review.}
+    On NYUv2 with UniDepthV2, eight sparse metric observations reduce AbsRel
+    from 0.0766 to 0.0540 (\textbf{29.5\%}); with 80\% of the observations
+    corrupted, AbsRel remains 0.0608.}
 
-\resumeItem{Research Interests}
-  {Vision--language--action models, robotic learning,
-  embodied perception, multimodal foundation models,
-  long-horizon memory, and robot evaluation.}
+  \paper
+    {Acquisition-Aware Anomaly Detection.}
+    {\textbf{\textit{Image and Computer Vision}, under review.}
+    Introduces ARAD, a benchmark for anomaly detection under blur, motion,
+    illumination, sensor noise, and mixed acquisition shifts, with a
+    training-free detection framework.}
 
-\resumeItemListEnd
-\resumeSubHeadingListEnd
+  \paper
+    {Mutual Hand--Object Reasoning for Egocentric Manipulation Perception.}
+    {\textbf{ICRA 2027, under review.}
+    Improves over CaRe-Ego by \textbf{6.93 mIoU} on the EgoHOS
+    out-of-distribution split and by \textbf{3.82 mIoU} on mini-HOI4D
+    without fine-tuning.}
 
+  \paper
+    {An Intelligent Virtual Machine Consolidation Approach for Energy-Efficient Cloud Data Centers.}
+    {\textbf{First author, ACOMPA 2025.}
+    \href{https://doi.org/10.1109/ACOMPA69200.2025.00021}{doi:10.1109/ACOMPA69200.2025.00021}}
+\end{itemize}
 
-% ---------- Research Experience ----------
-\section{Research Experience}
+\section*{Research Experience}
 
-\resumeSubHeadingListStart
-
-\resumeSubheading
-  {Eye Code Tech / ARENA Lab, Singapore Management University}
+\role
+  {ARENA Lab, Singapore Management University \textbar\ SMART}
   {Singapore / Remote}
-  {Research Collaborator --- Computer Vision \& Robot Learning}
+  {Research Collaborator, Eye Code Tech}
   {Feb 2026 -- Present}
+\advisors{%
+  \href{https://minhdov.github.io/}{Do Van Minh} (SMART)
+  and
+  \href{https://linhdoan.io/}{Prof.\ Linh K{\"a}stner} (Doan Hoang Linh, ARENA Lab)%
+}
 
-\resumeItemListStart
+\begin{itemize}
+  \item Reliable visual reasoning with pretrained foundation models: few-point metric grounding for monocular depth, acquisition-robust anomaly detection, and egocentric hand--object perception.
+  \item Current robot-learning directions: memory-augmented vision--language--action policies, demonstrations recovered from human video, and long-horizon manipulation.
+\end{itemize}
 
-\resumeItem{Vision Foundation Models}
-  {Research on reliable visual reasoning with frozen or pretrained
-  foundation models, including monocular depth grounding,
-  acquisition-robust anomaly detection,
-  and egocentric manipulation perception.}
-
-\resumeItem{Embodied AI}
-  {Developing research directions that connect visual perception
-  to robot learning, with emphasis on memory-augmented VLA policies,
-  video-derived demonstrations, and long-horizon manipulation.}
-
-\resumeItem{Research Collaboration}
-  {Collaborative research involving ARENA Lab at Singapore Management University
-  and Do Van Minh's group at SMART
-  (Singapore--MIT Alliance for Research and Technology).}
-
-\resumeItemListEnd
-
-
-\resumeSubheading
-  {HPCC Lab, HCMUT}
-  {Ho Chi Minh City, Vietnam}
-  {Research Assistant --- GPU Inference, Scheduling \& Systems}
+\role
+  {HPCC Lab, HCMUT, Vietnam National University}
+  {Ho Chi Minh City}
+  {Research Assistant}
   {Jan 2025 -- May 2026}
+\advisors{Prof.\ Nam Thoai}
 
-\resumeItemListStart
+\begin{itemize}
+  \item Thesis on scheduling concurrent heterogeneous vision inference under accuracy and service constraints.
+  \item About \textbf{20\% higher throughput} and \textbf{80\% fewer SLA violations} than strong scheduling baselines on mixed workloads.
+  \item Reproducible GPU benchmarks of latency, memory, and throughput for vision models.
+\end{itemize}
 
-\resumeItem{Efficient ML Inference}
-  {Designed adaptive scheduling methods for concurrent heterogeneous
-  vision workloads and evaluated accuracy--latency--throughput trade-offs
-  under service-level constraints.}
+\section*{Research in Progress}
 
-\resumeItem{Thesis Results}
-  {Achieved approximately \textbf{20\% higher throughput}
-  and \textbf{80\% fewer SLA violations} than strong scheduling baselines
-  on mixed ML inference workloads.}
+\begin{itemize}
+  \item \textbf{MemoryPi.} Explicit long-term memory for vision--language--action policies, so an action can depend on an observation or outcome no longer in the current frame. Motivated by long-horizon failures in RoboMME-style manipulation.
+  \item \textbf{Video-to-simulation.} Recover object geometry, hand--object interaction, and demonstrations from monocular human video, then retarget the interaction into a robot simulator.
+  \item \textbf{Generative evaluation.} Action-conditioned robot video and learned world models as an evaluation signal where authored 3D assets are insufficient. The open question is when a predicted visual future is reliable enough to judge a policy.
+\end{itemize}
 
-\resumeItem{GPU Profiling}
-  {Built reproducible inference benchmarks and profiled model latency,
-  memory use, throughput, and scheduling behavior on modern NVIDIA GPUs.}
+\section*{Additional Experience}
 
-\resumeItemListEnd
-
-
-\resumeSubheading
+\role
   {Dien Toan Group}
-  {Ho Chi Minh City, Vietnam}
+  {Ho Chi Minh City}
   {AI Engineer Intern}
   {May 2025 -- Aug 2025}
 
-\resumeItemListStart
+\begin{itemize}
+  \item Document-understanding and retrieval-augmented generation pipeline with multimodal language models, vector retrieval, PostgreSQL, MinIO, and Docker.
+  \item Member of the team named Most Outstanding Intern Team.
+\end{itemize}
 
-\resumeItem{Retrieval-Augmented Generation}
-  {Developed a document-understanding and RAG pipeline using
-  multimodal language models, vector retrieval, PostgreSQL, MinIO,
-  and Docker-based services.}
+\section*{Technical Preparation}
 
-\resumeItem{Recognition}
-  {Member of the team receiving the company's
-  \textbf{Most Outstanding Intern Team} award.}
+\begin{itemize}
+  \item \textbf{Research stack.} Python, PyTorch, OpenCV, CUDA. Vision and multimodal foundation models, detection and segmentation, monocular depth, vision--language--action models, reinforcement learning.
+  \item \textbf{Robotics.} Isaac Lab, manipulation evaluation, video-to-simulation, vision-based robot learning.
+  \item \textbf{Also.} C/C++, Java, Go, SQL, Linux, Git.
+\end{itemize}
 
-\resumeItemListEnd
+\section*{Awards and Languages}
 
-\resumeSubHeadingListEnd
-
-
-% ---------- Publications ----------
-\section{Publications \& Manuscripts}
-
-\resumeSubHeadingListStart
-
-\item\normalsize{
-  \textit{Reliable Few-Point Metric Grounding for Monocular Depth Foundation Models.}
-  \textbf{ICLR 2027 submission, under review.}
-  On NYUv2 with UniDepthV2, eight sparse metric observations reduce
-  AbsRel from \textbf{0.0766} to \textbf{0.0540}
-  (\textbf{29.5\% relative reduction});
-  with 80\% corrupted observations, AbsRel remains \textbf{0.0608}.
-}\vspace{3pt}
-
-\item\normalsize{
-  \textit{Acquisition-Aware Anomaly Detection.}
-  \textbf{Under review, Image and Computer Vision.}
-  Introduces \textbf{ARAD}, a benchmark for anomaly detection under
-  blur, motion, illumination, sensor noise, and mixed acquisition shifts,
-  together with a training-free acquisition-aware detection framework.
-}\vspace{3pt}
-
-\item\normalsize{
-  \textit{Mutual Hand--Object Reasoning for Egocentric Manipulation Perception.}
-  \textbf{ICRA 2027 submission, under review.}
-  Improves over CaRe-Ego by \textbf{6.93 mIoU points}
-  on the EgoHOS out-of-distribution split and by
-  \textbf{3.82 mIoU points} on mini-HOI4D
-  in cross-dataset evaluation without fine-tuning.
-}\vspace{3pt}
-
-\item\normalsize{
-  \textit{An Intelligent Virtual Machine Consolidation Approach
-  for Energy-Efficient Cloud Data Centers.}
-  \textbf{First author, ACOMPA 2025.}
-  \href{https://doi.org/10.1109/ACOMPA69200.2025.00021}
-  {\color{accentlight}\underline{DOI}}
-}\vspace{1pt}
-
-\resumeSubHeadingListEnd
-
-
-% ---------- Selected Research Projects ----------
-\section{Selected Research Projects}
-
-\resumeSubHeadingListStart
-
-\resumeSubItem
-  {MemoryPi --- Memory-Augmented Vision--Language--Action Model}
-  {Investigating explicit long-term memory for VLA policies.
-  The policy stores and retrieves task-relevant information across
-  subtasks so that actions can depend on observations or outcomes
-  no longer visible in the current frame. Motivated by long-horizon
-  failure modes observed in RoboMME-style manipulation tasks.}
-
-\resumeSubItem
-  {Video-to-Simulation for Robot Learning}
-  {Building a pipeline that uses computer-vision models to recover
-  object geometry, hand--object interaction, and demonstrations
-  from monocular human video, then retargets the reconstructed interaction
-  into a robot simulation environment for learning and evaluation.}
-
-\resumeSubItem
-  {Generative Evaluation for VLA Policies}
-  {Exploring action-conditioned robot video generation and learned
-  world models as a complementary evaluation signal for scenes that
-  are difficult to reproduce with manually authored 3D assets.
-  Current focus is understanding when predicted visual futures are
-  sufficiently reliable to evaluate robot behavior.}
-
-\resumeSubHeadingListEnd
-
-
-% ---------- Technical Skills ----------
-\section{Technical Skills}
-
-\resumeSubHeadingListStart
-
-\item\normalsize{
-  \textbf{\color{accentmid}Programming:}
-  Python, C/C++, Java, Go, SQL, Linux, Git.
-}\vspace{2pt}
-
-\item\normalsize{
-  \textbf{\color{accentmid}Machine Learning:}
-  PyTorch, OpenCV, CUDA;
-  vision and multimodal foundation models;
-  object detection and segmentation;
-  monocular depth;
-  VLA models;
-  reinforcement learning;
-  RAG and agentic AI.
-}\vspace{2pt}
-
-\item\normalsize{
-  \textbf{\color{accentmid}Robotics \& Simulation:}
-  Isaac Lab, robot simulation,
-  manipulation evaluation, video-to-simulation,
-  vision-based robot learning.
-}\vspace{2pt}
-
-\item\normalsize{
-  \textbf{\color{accentmid}Compute:}
-  Access to NVIDIA \textbf{H100}, RTX \textbf{A5000},
-  and experience profiling and optimizing GPU inference workloads.
-}\vspace{1pt}
-
-\resumeSubHeadingListEnd
-
-
-% ---------- Awards ----------
-\section{Awards \& Additional Information}
-
-\resumeSubHeadingListStart
-
-\item\normalsize{
-  \textbf{\color{accentmid}Awards:}
-  Most Outstanding Intern Team --- Dien Toan Group;
-  2\textsuperscript{nd} Place --- Innostart Entrepreneurship Competition;
-  Top 4 --- UTE Junior Startup.
-}\vspace{2pt}
-
-\item\normalsize{
-  \textbf{\color{accentmid}Languages:}
-  Vietnamese (Native);
-  English (Professional Working Proficiency).
-}\vspace{1pt}
-
-\resumeSubHeadingListEnd
+\begin{itemize}
+  \item Most Outstanding Intern Team, Dien Toan Group. Second place, Innostart Entrepreneurship Competition. Top 4, UTE Junior Startup. Vietnamese (native). English (professional working proficiency).
+\end{itemize}
 
 \end{document}
