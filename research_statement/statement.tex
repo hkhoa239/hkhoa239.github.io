@@ -1,6 +1,6 @@
 \documentclass[11pt]{article}
 
-\usepackage[margin=0.82in]{geometry}
+\usepackage[margin=0.78in]{geometry}
 \usepackage{setspace}
 \usepackage[hidelinks]{hyperref}
 \usepackage{enumitem}
@@ -9,93 +9,150 @@
 \usepackage[T1]{fontenc}
 \usepackage{microtype}
 
-\setstretch{1.01}
-\setlength{\parskip}{0.28em}
+\setstretch{1.0}
+\setlength{\parskip}{0.2em}
 \setlength{\parindent}{0pt}
-\titlespacing*{\section}{0pt}{0.7em}{0.22em}
-\titlespacing*{\subsection}{0pt}{0.5em}{0.12em}
-\setlist[itemize]{leftmargin=1.2em, itemsep=0.15em, topsep=0.2em}
+\titlespacing*{\section}{0pt}{0.6em}{0.16em}
+\titlespacing*{\subsection}{0pt}{0.42em}{0.08em}
+\setlist[itemize]{leftmargin=1.15em, itemsep=0.1em, topsep=0.12em}
 
 \begin{document}
 
 \begin{center}
-    {\LARGE \textbf{Research Statement}}\\[0.45em]
-    {\large Huynh Le Dang Khoa}\\[0.2em]
+    {\LARGE \textbf{Research Statement}}\\[0.35em]
+    {\large Huynh Le Dang Khoa}\\[0.12em]
     Ho Chi Minh City University of Technology, Vietnam National University\\
     \href{mailto:khoa.huynhspbk22@hcmut.edu.vn}{khoa.huynhspbk22@hcmut.edu.vn}
     \quad$\cdot$\quad
-    \href{https://hkhoa239.github.io/}{hkhoa239.github.io}\\[0.25em]
+    \href{https://hkhoa239.github.io/}{hkhoa239.github.io}\\[0.15em]
     {\small October 2026}
 \end{center}
 
-\vspace{0.1em}
+\section*{Research Area and Approach}
 
-\section*{Research Vision}
+I completed the Honors Bachelor's program in Computer Science at Ho Chi Minh City University of Technology, Vietnam National University, with the official diploma expected in November 2026. I am seeking PhD training for Spring or Fall 2027 in \textbf{computer vision, vision--language models, and vision--language--action (VLA) models}.
 
-I completed the Honors Bachelor's program in Computer Science at Ho Chi Minh City University of Technology, Vietnam National University, with the official diploma expected in November 2026. I am seeking PhD training for Spring or Fall 2027 in \textbf{computer vision, vision--language models, and vision--language--action models}.
+My general question is how a robot can perceive, remember, and act when the scene is only partly observed and keeps changing. Recent VLAs show that one policy can map images and language to robot actions and generalize beyond a single lab setup~\cite{black2025pi05,bu2025univla}. They are still expensive to run, weak when the needed evidence has left the camera frame, and hard to evaluate outside a hand-built simulator. My future work sits at those three gaps: \textbf{optimizing VLAs}, \textbf{memory-augmented VLAs}, and \textbf{video world models as simulation}.
 
-My long-term research question is: \textit{how can a robot perceive, remember, and act reliably when the environment is only partially observed, changes over time, and differs from the data on which its models were trained?} Recent experiments are in computer vision and robot simulation: reliable perception with foundation models, vision--language models, and early vision--language--action work, including learning from human video. In parallel, with Do Van Minh's group at SMART (Singapore--MIT Alliance for Research and Technology) and ARENA Lab at Singapore Management University, I have begun moving toward robot learning, particularly long-horizon VLA models and scalable evaluation.
+\section*{Current Research}
 
-\section*{Reliable Perception for Embodied Systems}
+A recurring theme in my experiments is that a foundation model is useful only when we know which evidence it should trust.
 
-A recurring theme in my current research is that strong foundation models are useful only when we understand \textit{which evidence they should trust}.
+In reliable few-point metric grounding, under review, I study whether a monocular depth model can be anchored by a handful of external measurements, and whether that anchor survives when some measurements are wrong. On a standard indoor benchmark, a small set of observations produces a large drop in absolute relative error, and most of that gain remains when the majority of the observations are corrupted. Acquisition-aware anomaly detection asks a related question: blur, motion, illumination, and sensor noise can look like defects even when the object has not changed. We introduce a benchmark for those acquisition shifts and a training-free detector that separates a change in capture from evidence of a real defect. Mutual hand--object reasoning, under review, moves closer to manipulation. Instead of reasoning only from the hand to the object, the model lets the two refine each other, and it improves egocentric segmentation when the test scene differs from training. I also contributed the vision--language prompt-optimization experiments in PEAR, a physics-reasoning framework that grounds a problem in an executable ontology before it computes an answer.
 
-In \textbf{Reliable Few-Point Metric Grounding}, currently under review, I study whether monocular depth foundation models can be grounded using only a handful of external metric measurements. On NYUv2 with UniDepthV2, eight observations reduce AbsRel from 0.0766 to 0.0540, a \textbf{29.5\% relative improvement}. More importantly, when \textbf{80\% of the sparse measurements are corrupted}, the proposed reliability-aware grounding mechanism still achieves an AbsRel of 0.0608. This project shaped my interest in systems that reason not only from available evidence, but also about its reliability.
+These projects are perception experiments in computer vision and vision--language models. They are also the reason I am moving toward robot learning. With Do Van Minh's group at SMART (Singapore--MIT Alliance for Research and Technology) and ARENA Lab at Singapore Management University, I have started two lines that connect that perception to action. Video-to-simulation asks whether computer vision can recover object geometry and hand--object interaction from ordinary human video, then place that interaction in a robot simulator. MemoryPi asks whether a VLA can store and retrieve what is no longer visible, instead of acting only on the current frame. My undergraduate thesis, graded 9.84/10, studied scheduling for concurrent vision inference. It taught me to treat speed and evaluation as part of the research question.
 
-In a second project on \textbf{acquisition-aware anomaly detection}, I study a related problem: an observation may change even when the physical state of the scene does not. Blur, motion, illumination, and sensor noise can therefore become false anomaly evidence. We introduce \textbf{ARAD}, a benchmark for acquisition robustness, together with a training-free framework that suppresses acquisition-induced variation while preserving defect evidence. The broader principle is directly relevant to robotics: perception should distinguish changes in \textit{how a scene is observed} from changes in \textit{what is actually present}.
+\section*{Future Research Directions}
 
-My work on \textbf{Mutual Hand--Object Reasoning for Egocentric Manipulation Perception}, under review at ICRA 2027, moves closer to manipulation. Instead of reasoning only from hands to manipulated objects, the model lets hand and object evidence refine one another. It improves over CaRe-Ego by \textbf{6.93 mIoU points} on the EgoHOS out-of-distribution split and by \textbf{3.82 mIoU points} on mini-HOI4D without fine-tuning. These results motivate my transition from robust perception toward policies that must use such perception over extended interactions.
+\subsection*{Optimizing Vision--Language--Action Models}
 
-\section*{Toward Robot Learning}
+Models such as $\pi_{0.5}$ show that a VLA can be aimed at open-world generalization rather than one tabletop setup~\cite{black2025pi05}. UniVLA pushes further by learning task-centric latent actions from human and robot video, so a policy is not tied to a single embodiment~\cite{bu2025univla}. The cost of that generality is inference. A VLA that recomputes a full visual representation at every control step is difficult to run in real time. VLA-Cache shows that much of the image barely changes between frames: it reuses those static tokens without retraining, recomputes the tokens the task still depends on, and reports up to a $1.7\times$ reduction in CUDA latency and a higher control frequency with negligible loss in success~\cite{xu2025vlacache}.
 
-I am currently exploring two projects that bridge perception and control.
+I want to treat optimization as a question about \textit{what must be recomputed}, not only as an engineering speedup. Which visual tokens, language tokens, or action chunks actually change the next command? When is a frozen VLA better steered by a small outer controller than fine-tuned end to end? Harness VLA already takes one step in that direction: it leaves the VLA frozen and calls it as one primitive among analytic moves~\cite{zhang2026harness}. My thesis on concurrent vision inference is the systems background for this question. The goal is a VLA that stays accurate while spending computation on the part of the scene the task still depends on.
 
-\textbf{Video-to-simulation} investigates how computer-vision models can reconstruct environments and demonstrations from monocular videos, so that robot learning can begin from naturally collected human demonstrations rather than manually constructed simulator scenes.
+\subsection*{Memory-Augmented Vision--Language--Action Models}
 
-\textbf{MemoryPi} is an initial exploration of memory-augmented VLA models, motivated by failure modes I observed while working with RoboMME-style tasks. Current VLAs can perform well when the information required for an action remains visible, but long-horizon tasks often require remembering observations, decisions, or subtask outcomes that are no longer present in the current frame. This limitation is a main direction I want to pursue during my PhD.
+Current VLAs act well when the relevant object is still in view. Long-horizon tasks often are not like that. RoboMME makes the failure concrete. A generalist policy may need temporal memory (how many times something has happened), spatial memory (where an occluded object went), object memory (which item a brief cue referred to), or procedural memory (how to repeat a demonstration)~\cite{dai2026robomme}. A longer context window is not the same as any of these. Harness VLA takes a complementary route. Its agent stores successful command traces for a task and reusable rules about what succeeded or failed, then chooses the next primitive~\cite{zhang2026harness}.
 
-\section*{Research Agenda}
+MemoryPi is my early version of this question. The policy should write down a subtask outcome, a spatial relation, or a failure, and read it back when the camera no longer shows the evidence. The research problems are what to store, when to write and retrieve it, and how to condition action generation on that memory without making inference too expensive. A useful result is a gain on tasks where the decisive observation has already disappeared, together with an account of which kind of memory produced the gain.
 
-\subsection*{1. Long-Horizon, Memory-Augmented VLA}
+\subsection*{Video World Models as Simulation}
 
-I want to develop VLA models that maintain useful state across long interactions rather than repeatedly solving each step from a short context window. The central questions are:
+Physics simulators are strong where the assets exist, and silent where they do not. A complementary route is to learn the scene from video. Feed-forward geometry models such as VGGT recover cameras, depth, points, and tracks from one or many views~\cite{wang2025vggt}. VGGT-$\Omega$ shows that this reconstruction scales to static and dynamic scenes, and that the learned scene representation can improve a VLA~\cite{wang2026vggtomega}. Single-image reconstruction such as SAM 3D recovers object shape, texture, and layout in clutter~\cite{sam3d2025}. On top of that geometry, human video can become robot experience. RoboEdit turns a human manipulation video into a physically plausible robot video with aligned 3D hand state~\cite{guo2026roboedit}. Do as I Do retargets everyday monocular video onto a dexterous hand~\cite{paliwal2026doasido}. Real2Render2Real builds demonstrations from a phone scan and one human video, without running object dynamics or teleoperating a robot, in a form a VLA can train on~\cite{yu2025r2r2r}. Contact-wrench guidance such as CHORD then uses human demonstration to train dexterous policies in simulation~\cite{zhu2026chord}.
 
-\begin{itemize}
-    \item \textbf{What should a robot remember?} Raw visual tokens may be inefficient; object states, spatial relations, completed subgoals, failures, and action outcomes may provide more useful long-term structure.
-    \item \textbf{When should memory be written and retrieved?} An effective memory system should identify events that matter for future decisions instead of storing the entire observation stream.
-    \item \textbf{How should memory interact with action generation?} Memory should improve long-horizon reasoning without making VLA inference prohibitively expensive.
-\end{itemize}
+I am equally interested in the learned dynamics, not only the reconstructed assets. Cosmos 3 treats language, image, video, audio, and action as one omnimodal world model, so the same backbone can understand, generate video, and propose actions~\cite{nvidia2026cosmos3}. V-JEPA 2 shows that a video model pretrained by observation, then post-trained as a latent action-conditioned world model on less than 62 hours of unlabeled robot video, can plan to image goals on a robot it was not trained on~\cite{assran2025vjepa2}. The open problem is reliability. A world model used as a simulator must be right on actions the policy should \textit{not} take, which are rare in successful demonstrations. World Action Verifier makes that gap explicit: it checks whether a predicted future is plausible and whether the action could have reached it, and uses that check to improve the model~\cite{liu2026wav}.
 
-A useful system should demonstrate gains specifically on tasks where relevant evidence has disappeared from view, and should reveal \textit{what kind of memory} is necessary rather than simply showing that a longer context window helps.
+This is the evaluation question I want to study. Video-to-simulation and action-conditioned video should complement asset-based simulators, not replace them. The claim is not that a generated future looks real. The claim is when that future is stable enough to train or score a VLA, and when it is not.
 
-\subsection*{2. Scalable Evaluation Beyond Conventional Simulation}
+\section*{Summary}
 
-Physics simulators such as RoboCasa365 provide strong controlled evaluation, but their coverage is ultimately bounded by available environments, assets, and embodiments. I am interested in a complementary evaluation paradigm based on \textbf{action-conditioned robot video generation and learned world models}.
+My near-term plan is to optimize how a VLA spends computation, to give it a memory of what the current frame no longer shows, and to test video world models as simulators for scenes we cannot author by hand. I am especially interested in unstructured settings, including construction and industrial work, where the visual conditions vary and a full simulator is hard to build in advance. The perception experiments above are the starting point: a policy should know which visual evidence to trust before it decides what to remember and how to act.
 
-The idea is not to replace simulation. Visual plausibility alone does not guarantee physical correctness. Instead, I want to study whether generative world models can serve as calibrated evaluators in scenes where a full simulator does not exist. A policy action would condition a predicted future observation, allowing us to ask whether the resulting interaction is visually and semantically consistent with the intended task.
+% \section*{Publications and Manuscripts}
+% \begin{itemize}
+%     \item \textbf{Reliable Few-Point Metric Grounding for Monocular Depth Foundation Models.} ICLR 2027, under review. On NYUv2 with UniDepthV2, eight sparse metric observations reduce AbsRel from 0.0766 to 0.0540 (29.5\%); with 80\% of the observations corrupted, AbsRel remains 0.0608.
+%     \item \textbf{Acquisition-Aware Anomaly Detection.} \textit{Image and Computer Vision}, under review. Introduces ARAD, a benchmark for anomaly detection under blur, motion, illumination, sensor noise, and mixed acquisition shifts, together with a training-free detection framework.
+%     \item \textbf{Mutual Hand--Object Reasoning for Egocentric Manipulation Perception.} ICRA 2027, under review. Improves over CaRe-Ego by 6.93 mIoU on the EgoHOS out-of-distribution split and by 3.82 mIoU on mini-HOI4D in cross-dataset evaluation without fine-tuning.
+%     \item \textbf{PEAR: Physics-Enabled Axiom-based Reasoning over Multimodal Graphs for Physics Problem Solving.} \textit{Discover Artificial Intelligence}. My contribution is the VLM prompt-optimization experiments. PEAR builds aligned image and text graphs, grounds them in an executable physics ontology (2,342 terms and 4,277 relations), and uses multi-agent reasoning for law selection and numerical solution. With Qwen3-VL-8B, the framework reaches 82.8\% on image-based ViPPS, 84.8\% on text-based ViPPS, and 52.3\% on CircuitSense, compared with 51.2\%, 60.4\%, and 32.5\% for the base model.
+%     \item \textbf{An Intelligent Virtual Machine Consolidation Approach for Energy-Efficient Cloud Data Centers.} First author, ACOMPA 2025.
+% \end{itemize}
 
-The key research questions are therefore not only how to generate future robot observations, but \textbf{when such predictions are reliable enough to evaluate a policy}, how their judgments correlate with ground-truth simulation or real execution, and how evaluation fails under new cameras, embodiments, objects, or environments. Recent robot video generation models suggest that this direction is becoming technically feasible, while my own early experiments indicate that generalization remains a substantial open problem.
+\begin{thebibliography}{99}
+\bibitem{black2025pi05}
+K.~Black, N.~Brown, J.~Darpinian, K.~Dhabalia, D.~Driess, A.~Esmail, M.~Equi, C.~Finn, et al.
+\newblock $\pi_{0.5}$: A vision-language-action model with open-world generalization.
+\newblock Physical Intelligence, 2025.
 
-\section*{Publications and Manuscripts}
+\bibitem{bu2025univla}
+Q.~Bu, Y.~Yang, J.~Cai, S.~Gao, G.~Ren, M.~Yao, P.~Luo, and H.~Li.
+\newblock UniVLA: Learning to act anywhere with task-centric latent actions.
+\newblock arXiv:2505.06111, 2025.
 
-\begin{itemize}
-    \item \textit{Reliable Few-Point Metric Grounding for Monocular Depth Foundation Models.} \textbf{ICLR 2027, under review.} On NYUv2 with UniDepthV2, eight sparse metric observations reduce AbsRel from 0.0766 to 0.0540 (\textbf{29.5\%}); with 80\% of the observations corrupted, AbsRel remains 0.0608.
+\bibitem{xu2025vlacache}
+S.~Xu, Y.~Wang, C.~Xia, D.~Zhu, T.~Huang, and C.~Xu.
+\newblock VLA-Cache: Efficient vision-language-action manipulation via adaptive token caching.
+\newblock In \textit{NeurIPS}, 2025.
 
-    \item \textit{Acquisition-Aware Anomaly Detection.} \textbf{\textit{Image and Computer Vision}, under review.} Introduces \textbf{ARAD}, a benchmark for anomaly detection under blur, motion, illumination, sensor noise, and mixed acquisition shifts, together with a training-free detection framework.
+\bibitem{zhang2026harness}
+Y.~Zhang, H.~Zhang, F.~Gao, X.~Li, Z.~Liu, Y.~Nie, et al.
+\newblock Harness VLA: Steering frozen VLAs into reliable manipulation primitives via memory-guided agents.
+\newblock arXiv:2607.08448, 2026.
 
-    \item \textit{Mutual Hand--Object Reasoning for Egocentric Manipulation Perception.} \textbf{ICRA 2027, under review.} Improves over CaRe-Ego by \textbf{6.93 mIoU} on the EgoHOS out-of-distribution split and by \textbf{3.82 mIoU} on mini-HOI4D in cross-dataset evaluation without fine-tuning.
+\bibitem{dai2026robomme}
+Y.~Dai, H.~Fu, J.~Lee, Y.~Liu, H.~Zhang, J.~Yang, C.~Finn, N.~Fazeli, and J.~Chai.
+\newblock RoboMME: Benchmarking and understanding memory for robotic generalist policies.
+\newblock arXiv:2603.04639, 2026.
 
-    \item \textit{PEAR: Physics-Enabled Axiom-based Reasoning over Multimodal Graphs for Physics Problem Solving.} \textbf{\textit{Discover Artificial Intelligence}.} My contribution is the VLM prompt-optimization experiments. PEAR builds aligned image and text graphs, grounds them in an executable physics ontology (2,342 terms and 4,277 relations), and uses multi-agent reasoning for law selection and numerical solution. With Qwen3-VL-8B, the framework reaches \textbf{82.8\%} on image-based ViPPS, \textbf{84.8\%} on text-based ViPPS, and \textbf{52.3\%} on CircuitSense, compared with 51.2\%, 60.4\%, and 32.5\% for the base model.
+\bibitem{wang2025vggt}
+J.~Wang, M.~Chen, N.~Karaev, A.~Vedaldi, C.~Rupprecht, and D.~Novotny.
+\newblock VGGT: Visual geometry grounded transformer.
+\newblock In \textit{CVPR}, 2025.
 
-    \item \textit{An Intelligent Virtual Machine Consolidation Approach for Energy-Efficient Cloud Data Centers.} \textbf{First author, ACOMPA 2025.}
-\end{itemize}
+\bibitem{wang2026vggtomega}
+J.~Wang, M.~Chen, S.~Zhang, N.~Karaev, J.~Sch\"onberger, P.~Labatut, P.~Bojanowski, D.~Novotny, A.~Vedaldi, and C.~Rupprecht.
+\newblock VGGT-$\Omega$.
+\newblock arXiv:2605.15195, 2026.
 
-\section*{PhD Direction}
+\bibitem{sam3d2025}
+SAM 3D Team, X.~Chen, F.-J.~Chu, P.~Gleize, K.~J.~Liang, A.~Sax, H.~Tang, et al.
+\newblock SAM 3D: 3Dfy anything in images.
+\newblock arXiv:2511.16624, 2025.
 
-I want my PhD to connect these themes into one agenda in computer vision and vision--language models: \textbf{reliable perception, persistent memory, and scalable evaluation for long-horizon robotic manipulation}. I am especially interested in unstructured settings, including construction and industrial work, where visual conditions vary, task histories matter, and a full simulator is hard to build in advance.
+\bibitem{guo2026roboedit}
+Y.~Guo, Z.~Tao, Y.~Jiang, Y.~Chen, Z.~Dou, Y.~Ma, Y.~Yang, D.~Terzopoulos, Y.~Jiang, and C.~Jiang.
+\newblock RoboEdit: Turning human manipulation videos into scalable robot experience.
+\newblock arXiv:2608.18948, 2026.
 
-My undergraduate thesis, graded 9.84/10, studied scheduling for concurrent vision inference; it also taught me to treat evaluation methodology and systems constraints as part of the research problem rather than as an afterthought.
+\bibitem{paliwal2026doasido}
+B.~Paliwal, H.~Etukuru, W.~Liang, P.~Abbeel, N.~M.~Shafiullah, and J.~Malik.
+\newblock Do as I do: Dexterous manipulation data from everyday human videos.
+\newblock arXiv:2606.19333, 2026.
 
-My goal for doctoral study is therefore not only to build a stronger VLA architecture, but to understand \textit{what information an embodied agent should trust, what it should remember, and how we can reliably determine whether it is learning the right behavior}.
+\bibitem{yu2025r2r2r}
+J.~Yu, M.~L.~Fu, H.~Huang, K.~El-Refai, R.~A.~Ambrus, R.~Cheng, M.~Z.~Irshad, and K.~Goldberg.
+\newblock Real2Render2Real: Scaling robot data without dynamics simulation or robot hardware.
+\newblock arXiv:2505.09601, 2025.
+
+\bibitem{zhu2026chord}
+X.~Zhu, Z.~Liu, S.~Jain, C.~Li, M.~Noori, M.~A.~Lin, et al.
+\newblock Learning dexterous manipulation using contact wrench guidance from human demonstration.
+\newblock NVIDIA, 2026.
+
+\bibitem{nvidia2026cosmos3}
+NVIDIA.
+\newblock Cosmos 3: Omnimodal world models for physical AI.
+\newblock arXiv:2606.02800, 2026.
+
+\bibitem{assran2025vjepa2}
+M.~Assran, A.~Bardes, D.~Fan, Q.~Garrido, R.~Howes, M.~Komeili, M.~Muckley, et al.
+\newblock V-JEPA 2: Self-supervised video models enable understanding, prediction and planning.
+\newblock arXiv:2506.09985, 2025.
+
+\bibitem{liu2026wav}
+Y.~Liu, F.~Feng, L.~Kong, W.~Lu, J.~Tang, K.~Zhang, K.~Murphy, C.~Finn, and Y.~Du.
+\newblock World Action Verifier: Self-improving world models via forward-inverse asymmetry.
+\newblock arXiv:2604.01985, 2026.
+
+\end{thebibliography}
 
 \end{document}

@@ -411,6 +411,68 @@
       font-weight: 600;
     }
 
+    .project {
+      margin-top: 1.15rem;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 1.15rem;
+      padding: 1.25rem 1.25rem 1.15rem;
+    }
+
+    .project h3 {
+      font-family: "Newsreader", serif;
+      font-size: 1.4rem;
+      font-weight: 650;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.45rem;
+    }
+
+    .project p { color: var(--muted); max-width: 46rem; }
+
+    .video-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-top: 0.95rem;
+    }
+
+    .video-row.single {
+      grid-template-columns: minmax(0, 40rem);
+    }
+
+    .video-row video {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #161410;
+      border-radius: 0.8rem;
+      display: block;
+    }
+
+    .video-cap {
+      margin-top: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--faint);
+    }
+
+    .doc-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.9rem;
+    }
+
+    .doc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
     .contact-panel {
       background: var(--navy);
       color: #f4efe6;
@@ -467,6 +529,11 @@
       .hero { padding-top: 1.4rem; gap: 1.6rem; }
       .contact-panel { padding: 1.4rem 1.2rem; }
       nav { gap: 0.85rem; }
+      .video-row,
+      .video-row.single,
+      .doc-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -480,6 +547,7 @@
         <a href="#now">Now</a>
         <a href="#about">About</a>
         <a href="#interests">Interests</a>
+        <a href="#projects">Projects</a>
         <a href="#work">Papers</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -554,7 +622,7 @@
         <div>
           <h2>Perception that a robot can trust, remember, and act on.</h2>
           <p class="prose" style="margin-top:1rem">
-            I finished the Honors B.Eng. in Computer Science at Ho Chi Minh City University of Technology, Vietnam National University, with an excellent GPA and a place in the top 1% of the faculty. The official diploma is expected in November 2026. My undergraduate thesis on accuracy-aware scheduling for concurrent vision inference was graded 9.84/10.
+            I finished the Honors B.Eng. in Computer Science at Ho Chi Minh City University of Technology, Vietnam National University, with an excellent GPA in the Honors Program and a place in the top 1% of the school. The official diploma is expected in November 2026. My undergraduate thesis on accuracy-aware scheduling for concurrent vision inference was graded 9.84/10.
           </p>
           <p class="prose">
             I collaborate with
@@ -574,6 +642,7 @@
           </p>
           <div class="cta-row" style="margin-top:1.35rem">
             <a class="btn" href="assets/resume.pdf" target="_blank" rel="noopener">View resume</a>
+            <a class="btn btn-ghost" href="academic_transcript.pdf" target="_blank" rel="noopener">Academic transcript</a>
             <a class="btn btn-ghost" href="research_statement/research_statement.pdf" target="_blank" rel="noopener">Research statement</a>
           </div>
         </div>
@@ -584,7 +653,7 @@
           </div>
           <div class="fact">
             <span>Standing</span>
-            <strong>Excellent GPA · Top 1%</strong>
+            <strong>Excellent GPA, Honors Program · Top 1% of the school</strong>
           </div>
           <div class="fact">
             <span>Thesis</span>
@@ -627,6 +696,78 @@
       </div>
     </section>
 
+    <section id="projects">
+      <p class="section-label">Selected projects</p>
+      <h2>Demos and writeups.</h2>
+      <p class="prose" style="margin-top:0.85rem">
+        Short clips from the robot and perception experiments, with the writeup for each.
+      </p>
+
+      <article class="project">
+        <span class="chip">VLA · Progress note</span>
+        <h3>ReTraceVLA</h3>
+        <p>
+          RouteStick asks a robot to watch a stick circle a set of posts, then repeat that path. The route is gone from the live view, so the policy has to keep the demonstration. These clips are one successful retrace and one failure on the easy setting.
+        </p>
+        <div class="video-row">
+          <figure>
+            <video controls preload="metadata" playsinline
+              src="selected_projects/videos/RouteStick_ep9_success_easy_watch the video carefully_ then use the stick attached to the robot to navigate.mp4"></video>
+            <figcaption class="video-cap">Success · easy</figcaption>
+          </figure>
+          <figure>
+            <video controls preload="metadata" playsinline
+              src="selected_projects/videos/RouteStick_ep0_fail_easy_watch the video carefully_ then use the stick attached to the robot to navigate.mp4"></video>
+            <figcaption class="video-cap">Failure · easy</figcaption>
+          </figure>
+        </div>
+        <div class="doc-links">
+          <a class="btn btn-ghost" href="selected_projects/ReTraceVLA.pdf" target="_blank" rel="noopener">Read the note</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <span class="chip">Perception · Demo</span>
+        <h3>Mutual hand–object reasoning</h3>
+        <p>
+          Egocentric hand and object evidence updating each other, instead of a one-way guess from the hand to the object.
+        </p>
+        <div class="video-row single">
+          <figure>
+            <video controls preload="metadata" playsinline
+              src="selected_projects/videos/20260922-hand-obj-demo.mp4"></video>
+            <figcaption class="video-cap">Hand–object demo</figcaption>
+          </figure>
+        </div>
+        <div class="doc-links">
+          <a class="btn btn-ghost" href="selected_projects/Mutual Hand–Object Reasoning.pdf" target="_blank" rel="noopener">Read the paper</a>
+        </div>
+      </article>
+
+      <div class="doc-grid">
+        <article class="project" style="margin-top:0">
+          <span class="chip">Depth · Writeup</span>
+          <h3>Learning to trust sparse metric evidence</h3>
+          <p>
+            How few external measurements are enough to ground a monocular depth model, and which of those measurements to trust.
+          </p>
+          <div class="doc-links">
+            <a class="btn btn-ghost" href="selected_projects/Learning to Trust Sparse Metric Evidence.pdf" target="_blank" rel="noopener">Read the paper</a>
+          </div>
+        </article>
+        <article class="project" style="margin-top:0">
+          <span class="chip">Anomaly · Writeup</span>
+          <h3>A change in observation is not a change in normality</h3>
+          <p>
+            Acquisition-aware anomaly detection: blur, motion, illumination, and sensor noise separated from a real defect.
+          </p>
+          <div class="doc-links">
+            <a class="btn btn-ghost" href="selected_projects/A Change in Observation Is Not a Change in Normality.pdf" target="_blank" rel="noopener">Read the paper</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <section id="work">
       <p class="section-label">Selected papers</p>
       <h2>Published and under review.</h2>
@@ -637,6 +778,9 @@
         <p>
           Monocular depth foundation models are strong and metrically unanchored. This work asks how few sparse metric observations are enough to ground them, and how that grounding holds when some observations are wrong.
         </p>
+        <div class="links">
+          <a href="selected_projects/Learning to Trust Sparse Metric Evidence.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
       </article>
 
       <article class="work-item">
@@ -645,6 +789,9 @@
         <p>
           Anomaly detectors often treat blur, motion, illumination, and sensor noise as defects. This work introduces the <strong>ARAD</strong> benchmark for those acquisition shifts, and a training-free framework that separates a change in how the scene was captured from evidence of a real defect.
         </p>
+        <div class="links">
+          <a href="selected_projects/A Change in Observation Is Not a Change in Normality.pdf" target="_blank" rel="noopener">PDF</a>
+        </div>
       </article>
 
       <article class="work-item">
@@ -653,6 +800,11 @@
         <p>
           Egocentric manipulation perception usually reasons from the hand to the object. This work lets hand and object evidence refine each other, including when the scene differs from the one the model was trained on.
         </p>
+        <div class="links">
+          <a href="selected_projects/Mutual Hand–Object Reasoning.pdf" target="_blank" rel="noopener">PDF</a>
+          ·
+          <a href="#projects">Demo</a>
+        </div>
       </article>
 
       <article class="work-item">
